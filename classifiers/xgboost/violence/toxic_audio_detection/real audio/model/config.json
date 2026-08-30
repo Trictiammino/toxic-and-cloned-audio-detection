@@ -1,0 +1,10 @@
+{
+    "best_f1_cv": 0.9904824411898028,
+    "best_params": {
+        "classifier__subsample": 0.8,
+        "classifier__n_estimators": 200,
+        "classifier__max_depth": 3,
+        "classifier__learning_rate": 0.2,
+        "classifier__colsample_bytree": 0.8
+    }
+}

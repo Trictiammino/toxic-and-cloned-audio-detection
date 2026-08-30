@@ -1,0 +1,323 @@
+{
+  "config": {
+    "model": "One-Class Autoencoder (v3: calibrazione soglia robusta + ensemble) -- training su CLONATI, test su REALI (inversione)",
+    "training_data": "cloned audio train/val split (qwen3, chatterbox), al netto del calibration set",
+    "test_sources": [
+      "real"
+    ],
+    "test_size_real": 0.1,
+    "test_size_cloned": 0.2,
+    "calibration_size": 0.25,
+    "threshold_calibration_method": "fpr_constrained",
+    "threshold_target_fpr": 0.25,
+    "threshold_n_bootstrap": 300,
+    "threshold_n_candidates": 300,
+    "scaler_type": "robust",
+    "n_folds": 5,
+    "scale_features": true,
+    "use_variance_threshold": true,
+    "use_feature_selection": true,
+    "n_features_select": 40,
+    "use_pca": false,
+    "pca_n_components": null,
+    "n_features": 40,
+    "ae_ensemble_size": 5,
+    "ae_ensemble_bootstrap": true,
+    "grid_search_use_auc_scoring": true,
+    "autoencoder": {
+      "type": "ensemble",
+      "n_estimators": 5,
+      "bootstrap": true,
+      "hidden_dims": [
+        128,
+        64
+      ],
+      "latent_dim": 8,
+      "learning_rate": 5e-05,
+      "epochs_max": 200,
+      "epochs_trained": null,
+      "epochs_trained_per_member": [
+        160,
+        200,
+        200,
+        189,
+        138
+      ],
+      "batch_size": 64,
+      "dropout_rate": 0.2,
+      "activation": "relu",
+      "weight_decay": 1e-05,
+      "early_stopping": true,
+      "patience": 30,
+      "threshold_percentile": 90.0,
+      "threshold_mse": 0.231088768728202,
+      "threshold_method": "fpr_constrained",
+      "calibration_j_stat": 0.19183209352582528,
+      "calibration_achieved_fpr": 0.24868835257082897,
+      "calibration_achieved_tpr": 0.44052044609665425,
+      "calibration_threshold_std": 0.0068832473072650635
+    }
+  },
+  "kfold_paired_trainval": {
+    "folds": [
+      {
+        "fold": 1,
+        "n_train_real": 2284,
+        "n_val_real": 571,
+        "n_val_cloned": 323,
+        "inlier_rate_real": 0.9176882661996497,
+        "false_positive_rate": 0.08231173380035028,
+        "detection_rate_cloned": 0.25077399380804954,
+        "false_negative_rate": 0.7492260061919505,
+        "balanced_score": 0.5842311300038496,
+        "roc_auc": 0.6701403761799679,
+        "mean_decision_score": 0.16942140460014343,
+        "n_epochs_trained": null,
+        "threshold_mse": 0.42673428654670714
+      },
+      {
+        "fold": 2,
+        "n_train_real": 2284,
+        "n_val_real": 571,
+        "n_val_cloned": 322,
+        "inlier_rate_real": 0.8861646234676007,
+        "false_positive_rate": 0.11383537653239928,
+        "detection_rate_cloned": 0.2329192546583851,
+        "false_negative_rate": 0.7670807453416149,
+        "balanced_score": 0.5595419390629929,
+        "roc_auc": 0.6608053866486822,
+        "mean_decision_score": 0.032281238585710526,
+        "n_epochs_trained": null,
+        "threshold_mse": 0.3928025424480438
+      },
+      {
+        "fold": 3,
+        "n_train_real": 2284,
+        "n_val_real": 571,
+        "n_val_cloned": 322,
+        "inlier_rate_real": 0.8861646234676007,
+        "false_positive_rate": 0.11383537653239928,
+        "detection_rate_cloned": 0.21739130434782608,
+        "false_negative_rate": 0.782608695652174,
+        "balanced_score": 0.5517779639077134,
+        "roc_auc": 0.6711990514625099,
+        "mean_decision_score": 0.05376187711954117,
+        "n_epochs_trained": null,
+        "threshold_mse": 0.40560768246650697
+      },
+      {
+        "fold": 4,
+        "n_train_real": 2284,
+        "n_val_real": 571,
+        "n_val_cloned": 322,
+        "inlier_rate_real": 0.8686514886164624,
+        "false_positive_rate": 0.13134851138353765,
+        "detection_rate_cloned": 0.20496894409937888,
+        "false_negative_rate": 0.7950310559006211,
+        "balanced_score": 0.5368102163579206,
+        "roc_auc": 0.6354874851791017,
+        "mean_decision_score": 0.05206406116485596,
+        "n_epochs_trained": null,
+        "threshold_mse": 0.328141450881958
+      },
+      {
+        "fold": 5,
+        "n_train_real": 2284,
+        "n_val_real": 571,
+        "n_val_cloned": 322,
+        "inlier_rate_real": 0.9036777583187391,
+        "false_positive_rate": 0.09632224168126091,
+        "detection_rate_cloned": 0.1956521739130435,
+        "false_negative_rate": 0.8043478260869565,
+        "balanced_score": 0.5496649661158913,
+        "roc_auc": 0.6515158107711219,
+        "mean_decision_score": 0.15805764496326447,
+        "n_epochs_trained": null,
+        "threshold_mse": 0.4268327414989471
+      }
+    ],
+    "mean_inlier_rate": 0.8924693520140105,
+    "std_inlier_rate": 0.016783395517633533,
+    "mean_false_positive_rate": 0.10753064798598948,
+    "std_false_positive_rate": 0.016783395517633533,
+    "mean_detection_rate": 0.2203411341653366,
+    "std_detection_rate": 0.019692224571572534,
+    "mean_false_negative_rate": 0.7796588658346633,
+    "std_false_negative_rate": 0.01969222457157254,
+    "mean_balanced_score": 0.5564052430896735,
+    "std_balanced_score": 0.015715768916084043,
+    "mean_roc_auc": 0.6578296220482768,
+    "std_roc_auc": 0.013252824437338776
+  },
+  "evaluation_test_set": {
+    "split": {
+      "test_size_real": 0.1,
+      "test_size_cloned": 0.2,
+      "calibration_size": 0.25,
+      "n_real_trainval": 2855,
+      "n_real_test": 953,
+      "cloned_trainval": {
+        "real": 1611
+      },
+      "cloned_test": {
+        "real": 239
+      }
+    },
+    "final_model": {
+      "type": "ensemble",
+      "n_estimators": 5,
+      "bootstrap": true,
+      "hidden_dims": [
+        128,
+        64
+      ],
+      "latent_dim": 8,
+      "learning_rate": 5e-05,
+      "epochs_max": 200,
+      "epochs_trained": null,
+      "epochs_trained_per_member": [
+        160,
+        200,
+        200,
+        189,
+        138
+      ],
+      "batch_size": 64,
+      "dropout_rate": 0.2,
+      "activation": "relu",
+      "weight_decay": 1e-05,
+      "early_stopping": true,
+      "patience": 30,
+      "threshold_percentile": 90.0,
+      "threshold_mse": 0.231088768728202,
+      "threshold_method": "fpr_constrained",
+      "calibration_j_stat": 0.19183209352582528,
+      "calibration_achieved_fpr": 0.24868835257082897,
+      "calibration_achieved_tpr": 0.44052044609665425,
+      "calibration_threshold_std": 0.0068832473072650635
+    },
+    "test_real_audio": {
+      "n_samples": 953,
+      "inlier_rate": 0.7261280167890871,
+      "false_positive_rate": 0.2738719832109129,
+      "n_predicted_inlier": 692,
+      "n_predicted_outlier": 261,
+      "mean_decision_score": 0.003474304685369134
+    },
+    "per_source": {
+      "real": {
+        "n_samples": 239,
+        "anomaly_detection_rate": 0.497907949790795,
+        "false_negative_rate": 0.502092050209205,
+        "n_predicted_outlier": 119,
+        "n_predicted_inlier": 120,
+        "mean_decision_score": -0.080563984811306,
+        "accuracy_vs_real_test": 0.6803691275167785,
+        "roc_auc_vs_real_test": 0.6450495462468225,
+        "confusion_matrix": [
+          [
+            692,
+            261
+          ],
+          [
+            120,
+            119
+          ]
+        ],
+        "classification_report": {
+          "Cloned": {
+            "precision": 0.8522167487684729,
+            "recall": 0.7261280167890871,
+            "f1-score": 0.7841359773371105,
+            "support": 953.0
+          },
+          "Real": {
+            "precision": 0.3131578947368421,
+            "recall": 0.497907949790795,
+            "f1-score": 0.38449111470113084,
+            "support": 239.0
+          },
+          "accuracy": 0.6803691275167785,
+          "macro avg": {
+            "precision": 0.5826873217526575,
+            "recall": 0.6120179832899411,
+            "f1-score": 0.5843135460191207,
+            "support": 1192.0
+          },
+          "weighted avg": {
+            "precision": 0.7441336396128019,
+            "recall": 0.6803691275167785,
+            "f1-score": 0.7040058412884536,
+            "support": 1192.0
+          }
+        }
+      }
+    },
+    "combined_all_cloned": {
+      "sources": [
+        "real"
+      ],
+      "n_cloned_total": 239,
+      "anomaly_detection_rate": 0.497907949790795,
+      "false_negative_rate": 0.502092050209205,
+      "accuracy": 0.6803691275167785,
+      "roc_auc": 0.6450495462468225,
+      "confusion_matrix": [
+        [
+          692,
+          261
+        ],
+        [
+          120,
+          119
+        ]
+      ],
+      "classification_report": {
+        "Cloned": {
+          "precision": 0.8522167487684729,
+          "recall": 0.7261280167890871,
+          "f1-score": 0.7841359773371105,
+          "support": 953.0
+        },
+        "Real": {
+          "precision": 0.3131578947368421,
+          "recall": 0.497907949790795,
+          "f1-score": 0.38449111470113084,
+          "support": 239.0
+        },
+        "accuracy": 0.6803691275167785,
+        "macro avg": {
+          "precision": 0.5826873217526575,
+          "recall": 0.6120179832899411,
+          "f1-score": 0.5843135460191207,
+          "support": 1192.0
+        },
+        "weighted avg": {
+          "precision": 0.7441336396128019,
+          "recall": 0.6803691275167785,
+          "f1-score": 0.7040058412884536,
+          "support": 1192.0
+        }
+      }
+    }
+  },
+  "grid_search": {
+    "enabled": true,
+    "randomized": true,
+    "cv_type": "PairedOneClassKFold",
+    "scoring": "roc_auc_paired",
+    "n_iter": 40,
+    "best_params": {
+      "classifier__weight_decay": 1e-05,
+      "classifier__learning_rate": 5e-05,
+      "classifier__latent_dim": 8,
+      "classifier__hidden_dims": [
+        128,
+        64
+      ],
+      "classifier__epochs": 200,
+      "classifier__dropout_rate": 0.2
+    },
+    "best_score": 0.6628738817540265
+  }
+}

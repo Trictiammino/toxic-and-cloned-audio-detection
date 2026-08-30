@@ -1,0 +1,10 @@
+{
+    "best_f1_cv": 0.9815669730496858,
+    "best_params": {
+        "classifier__n_estimators": 100,
+        "classifier__min_samples_split": 10,
+        "classifier__min_samples_leaf": 2,
+        "classifier__max_features": "sqrt",
+        "classifier__max_depth": 30
+    }
+}

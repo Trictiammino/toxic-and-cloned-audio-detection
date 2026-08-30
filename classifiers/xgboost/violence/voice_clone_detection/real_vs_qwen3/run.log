@@ -1,0 +1,264 @@
+2026-06-22 15:53:23,407 [INFO] ============================================================
+2026-06-22 15:53:23,407 [INFO] Audio Clone Detection — XGBoost Classifier
+2026-06-22 15:53:23,407 [INFO] ============================================================
+2026-06-22 15:53:23,407 [INFO] PROJECT_ROOT: C:\Users\fanto\Desktop\TesiDiLaurea
+2026-06-22 15:53:23,408 [INFO] Caricamento CSV clonato:   C:\Users\fanto\Desktop\TesiDiLaurea\generate_cloned_audio\qwen3_tts\violence\extracted_audio_features\audio\features_cloned_audio_dataset.csv
+2026-06-22 15:53:23,527 [INFO] Caricamento CSV originale: C:\Users\fanto\Desktop\TesiDiLaurea\datasets\violence\extracted_audio_features\audio\features_real_audio_dataset.csv
+2026-06-22 15:53:23,643 [INFO]   Righe cloned:   2387
+2026-06-22 15:53:23,645 [INFO]   Righe original: 2394
+2026-06-22 15:53:23,667 [INFO]   Totale dopo merge e shuffle: 4781 righe, 487 colonne
+2026-06-22 15:53:25,087 [INFO] Dataset merged salvato: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3\merged_dataset.csv
+2026-06-22 15:53:25,095 [INFO] Rimozione righe con NaN: 4781 -> 4770
+2026-06-22 15:53:25,095 [INFO] Colonne escluse manualmente: ['sample_id', 'path', 'text', 'label']
+2026-06-22 15:53:25,125 [INFO] Feature usate: 482
+2026-06-22 15:53:25,125 [INFO] Distribuzione label — Yes: 2382, No: 2388
+2026-06-22 15:53:25,134 [INFO] Split -> Train: 4054, Test: 716
+2026-06-22 15:53:25,134 [INFO] 
+============================================================
+2026-06-22 15:53:25,134 [INFO] RandomizedSearchCV (scoring=roc_auc, cv=5)
+2026-06-22 15:53:25,134 [INFO] Combinazioni totali nello spazio: 162
+2026-06-22 15:53:25,134 [INFO] Combinazioni che verranno testate: 30
+2026-06-22 15:53:25,134 [INFO] Fit totali da eseguire: 150
+2026-06-22 15:53:25,134 [INFO] ============================================================
+2026-06-22 15:53:28,389 [INFO]   [  1/150] fit completato
+2026-06-22 15:53:31,456 [INFO]   [  2/150] fit completato
+2026-06-22 15:53:34,578 [INFO]   [  3/150] fit completato
+2026-06-22 15:53:37,490 [INFO]   [  4/150] fit completato
+2026-06-22 15:53:40,374 [INFO]   [  5/150] fit completato
+2026-06-22 15:53:41,139 [INFO]   [  6/150] fit completato
+2026-06-22 15:53:41,905 [INFO]   [  7/150] fit completato
+2026-06-22 15:53:42,692 [INFO]   [  8/150] fit completato
+2026-06-22 15:53:43,463 [INFO]   [  9/150] fit completato
+2026-06-22 15:53:44,242 [INFO]   [ 10/150] fit completato
+2026-06-22 15:53:45,636 [INFO]   [ 11/150] fit completato
+2026-06-22 15:53:47,016 [INFO]   [ 12/150] fit completato
+2026-06-22 15:53:48,409 [INFO]   [ 13/150] fit completato
+2026-06-22 15:53:49,814 [INFO]   [ 14/150] fit completato
+2026-06-22 15:53:51,182 [INFO]   [ 15/150] fit completato
+2026-06-22 15:53:51,937 [INFO]   [ 16/150] fit completato
+2026-06-22 15:53:52,673 [INFO]   [ 17/150] fit completato
+2026-06-22 15:53:53,402 [INFO]   [ 18/150] fit completato
+2026-06-22 15:53:54,139 [INFO]   [ 19/150] fit completato
+2026-06-22 15:53:54,878 [INFO]   [ 20/150] fit completato
+2026-06-22 15:53:56,199 [INFO]   [ 21/150] fit completato
+2026-06-22 15:53:57,522 [INFO]   [ 22/150] fit completato
+2026-06-22 15:53:58,839 [INFO]   [ 23/150] fit completato
+2026-06-22 15:54:00,174 [INFO]   [ 24/150] fit completato
+2026-06-22 15:54:01,506 [INFO]   [ 25/150] fit completato
+2026-06-22 15:54:05,032 [INFO]   [ 26/150] fit completato
+2026-06-22 15:54:08,613 [INFO]   [ 27/150] fit completato
+2026-06-22 15:54:12,148 [INFO]   [ 28/150] fit completato
+2026-06-22 15:54:15,608 [INFO]   [ 29/150] fit completato
+2026-06-22 15:54:19,058 [INFO]   [ 30/150] fit completato
+2026-06-22 15:54:21,723 [INFO]   [ 31/150] fit completato
+2026-06-22 15:54:24,379 [INFO]   [ 32/150] fit completato
+2026-06-22 15:54:27,065 [INFO]   [ 33/150] fit completato
+2026-06-22 15:54:29,832 [INFO]   [ 34/150] fit completato
+2026-06-22 15:54:32,542 [INFO]   [ 35/150] fit completato
+2026-06-22 15:54:35,904 [INFO]   [ 36/150] fit completato
+2026-06-22 15:54:39,226 [INFO]   [ 37/150] fit completato
+2026-06-22 15:54:42,609 [INFO]   [ 38/150] fit completato
+2026-06-22 15:54:45,919 [INFO]   [ 39/150] fit completato
+2026-06-22 15:54:49,309 [INFO]   [ 40/150] fit completato
+2026-06-22 15:54:51,898 [INFO]   [ 41/150] fit completato
+2026-06-22 15:54:54,492 [INFO]   [ 42/150] fit completato
+2026-06-22 15:54:57,104 [INFO]   [ 43/150] fit completato
+2026-06-22 15:54:59,701 [INFO]   [ 44/150] fit completato
+2026-06-22 15:55:02,325 [INFO]   [ 45/150] fit completato
+2026-06-22 15:55:03,027 [INFO]   [ 46/150] fit completato
+2026-06-22 15:55:03,719 [INFO]   [ 47/150] fit completato
+2026-06-22 15:55:04,415 [INFO]   [ 48/150] fit completato
+2026-06-22 15:55:05,103 [INFO]   [ 49/150] fit completato
+2026-06-22 15:55:05,793 [INFO]   [ 50/150] fit completato
+2026-06-22 15:55:06,458 [INFO]   [ 51/150] fit completato
+2026-06-22 15:55:07,108 [INFO]   [ 52/150] fit completato
+2026-06-22 15:55:07,757 [INFO]   [ 53/150] fit completato
+2026-06-22 15:55:08,407 [INFO]   [ 54/150] fit completato
+2026-06-22 15:55:09,046 [INFO]   [ 55/150] fit completato
+2026-06-22 15:55:12,553 [INFO]   [ 56/150] fit completato
+2026-06-22 15:55:16,161 [INFO]   [ 57/150] fit completato
+2026-06-22 15:55:19,841 [INFO]   [ 58/150] fit completato
+2026-06-22 15:55:23,413 [INFO]   [ 59/150] fit completato
+2026-06-22 15:55:26,941 [INFO]   [ 60/150] fit completato
+2026-06-22 15:55:37,622 [INFO]   [ 61/150] fit completato
+2026-06-22 15:55:48,534 [INFO]   [ 62/150] fit completato
+2026-06-22 15:55:59,405 [INFO]   [ 63/150] fit completato
+2026-06-22 15:56:10,519 [INFO]   [ 64/150] fit completato
+2026-06-22 15:56:21,536 [INFO]   [ 65/150] fit completato
+2026-06-22 15:56:27,114 [INFO]   [ 66/150] fit completato
+2026-06-22 15:56:33,110 [INFO]   [ 67/150] fit completato
+2026-06-22 15:56:38,992 [INFO]   [ 68/150] fit completato
+2026-06-22 15:56:44,926 [INFO]   [ 69/150] fit completato
+2026-06-22 15:56:50,685 [INFO]   [ 70/150] fit completato
+2026-06-22 15:56:52,753 [INFO]   [ 71/150] fit completato
+2026-06-22 15:56:54,792 [INFO]   [ 72/150] fit completato
+2026-06-22 15:56:56,857 [INFO]   [ 73/150] fit completato
+2026-06-22 15:56:58,862 [INFO]   [ 74/150] fit completato
+2026-06-22 15:57:00,913 [INFO]   [ 75/150] fit completato
+2026-06-22 15:57:04,372 [INFO]   [ 76/150] fit completato
+2026-06-22 15:57:08,000 [INFO]   [ 77/150] fit completato
+2026-06-22 15:57:11,642 [INFO]   [ 78/150] fit completato
+2026-06-22 15:57:15,183 [INFO]   [ 79/150] fit completato
+2026-06-22 15:57:18,709 [INFO]   [ 80/150] fit completato
+2026-06-22 15:57:24,380 [INFO]   [ 81/150] fit completato
+2026-06-22 15:57:30,019 [INFO]   [ 82/150] fit completato
+2026-06-22 15:57:35,726 [INFO]   [ 83/150] fit completato
+2026-06-22 15:57:41,383 [INFO]   [ 84/150] fit completato
+2026-06-22 15:57:46,991 [INFO]   [ 85/150] fit completato
+2026-06-22 15:57:49,863 [INFO]   [ 86/150] fit completato
+2026-06-22 15:57:52,720 [INFO]   [ 87/150] fit completato
+2026-06-22 15:57:55,555 [INFO]   [ 88/150] fit completato
+2026-06-22 15:57:58,284 [INFO]   [ 89/150] fit completato
+2026-06-22 15:58:01,012 [INFO]   [ 90/150] fit completato
+2026-06-22 15:58:02,821 [INFO]   [ 91/150] fit completato
+2026-06-22 15:58:04,620 [INFO]   [ 92/150] fit completato
+2026-06-22 15:58:06,411 [INFO]   [ 93/150] fit completato
+2026-06-22 15:58:08,230 [INFO]   [ 94/150] fit completato
+2026-06-22 15:58:10,033 [INFO]   [ 95/150] fit completato
+2026-06-22 15:58:21,760 [INFO]   [ 96/150] fit completato
+2026-06-22 15:58:33,638 [INFO]   [ 97/150] fit completato
+2026-06-22 15:58:45,411 [INFO]   [ 98/150] fit completato
+2026-06-22 15:58:57,387 [INFO]   [ 99/150] fit completato
+2026-06-22 15:59:09,440 [INFO]   [100/150] fit completato
+2026-06-22 15:59:10,740 [INFO]   [101/150] fit completato
+2026-06-22 15:59:12,000 [INFO]   [102/150] fit completato
+2026-06-22 15:59:13,299 [INFO]   [103/150] fit completato
+2026-06-22 15:59:14,560 [INFO]   [104/150] fit completato
+2026-06-22 15:59:15,825 [INFO]   [105/150] fit completato
+2026-06-22 15:59:16,469 [INFO]   [106/150] fit completato
+2026-06-22 15:59:17,115 [INFO]   [107/150] fit completato
+2026-06-22 15:59:17,765 [INFO]   [108/150] fit completato
+2026-06-22 15:59:18,412 [INFO]   [109/150] fit completato
+2026-06-22 15:59:19,058 [INFO]   [110/150] fit completato
+2026-06-22 15:59:24,623 [INFO]   [111/150] fit completato
+2026-06-22 15:59:30,432 [INFO]   [112/150] fit completato
+2026-06-22 15:59:36,197 [INFO]   [113/150] fit completato
+2026-06-22 15:59:42,179 [INFO]   [114/150] fit completato
+2026-06-22 15:59:47,995 [INFO]   [115/150] fit completato
+2026-06-22 15:59:52,870 [INFO]   [116/150] fit completato
+2026-06-22 15:59:57,768 [INFO]   [117/150] fit completato
+2026-06-22 16:00:02,861 [INFO]   [118/150] fit completato
+2026-06-22 16:00:07,694 [INFO]   [119/150] fit completato
+2026-06-22 16:00:12,497 [INFO]   [120/150] fit completato
+2026-06-22 16:00:16,249 [INFO]   [121/150] fit completato
+2026-06-22 16:00:20,109 [INFO]   [122/150] fit completato
+2026-06-22 16:00:23,846 [INFO]   [123/150] fit completato
+2026-06-22 16:00:27,509 [INFO]   [124/150] fit completato
+2026-06-22 16:00:31,184 [INFO]   [125/150] fit completato
+2026-06-22 16:00:33,887 [INFO]   [126/150] fit completato
+2026-06-22 16:00:36,518 [INFO]   [127/150] fit completato
+2026-06-22 16:00:39,170 [INFO]   [128/150] fit completato
+2026-06-22 16:00:41,874 [INFO]   [129/150] fit completato
+2026-06-22 16:00:44,567 [INFO]   [130/150] fit completato
+2026-06-22 16:00:46,330 [INFO]   [131/150] fit completato
+2026-06-22 16:00:48,079 [INFO]   [132/150] fit completato
+2026-06-22 16:00:49,860 [INFO]   [133/150] fit completato
+2026-06-22 16:00:51,624 [INFO]   [134/150] fit completato
+2026-06-22 16:00:53,398 [INFO]   [135/150] fit completato
+2026-06-22 16:00:54,101 [INFO]   [136/150] fit completato
+2026-06-22 16:00:54,801 [INFO]   [137/150] fit completato
+2026-06-22 16:00:55,490 [INFO]   [138/150] fit completato
+2026-06-22 16:00:56,182 [INFO]   [139/150] fit completato
+2026-06-22 16:00:56,891 [INFO]   [140/150] fit completato
+2026-06-22 16:00:59,192 [INFO]   [141/150] fit completato
+2026-06-22 16:01:01,496 [INFO]   [142/150] fit completato
+2026-06-22 16:01:03,792 [INFO]   [143/150] fit completato
+2026-06-22 16:01:06,082 [INFO]   [144/150] fit completato
+2026-06-22 16:01:08,400 [INFO]   [145/150] fit completato
+2026-06-22 16:01:11,804 [INFO]   [146/150] fit completato
+2026-06-22 16:01:15,180 [INFO]   [147/150] fit completato
+2026-06-22 16:01:18,618 [INFO]   [148/150] fit completato
+2026-06-22 16:01:22,046 [INFO]   [149/150] fit completato
+2026-06-22 16:01:25,419 [INFO]   [150/150] fit completato
+2026-06-22 16:01:28,557 [INFO] 
+  Best score (roc_auc): 0.9868
+2026-06-22 16:01:28,557 [INFO]   Best params: {'classifier__subsample': 0.7, 'classifier__n_estimators': 200, 'classifier__max_depth': 6, 'classifier__learning_rate': 0.2, 'classifier__colsample_bytree': 1.0}
+2026-06-22 16:01:28,560 [INFO]   Risultati grid search salvati: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3\metrics\grid_search_results.csv
+2026-06-22 16:01:28,560 [INFO] 
+============================================================
+2026-06-22 16:01:28,560 [INFO] K-Fold Cross-Validation (k=5) sul training set
+2026-06-22 16:01:28,560 [INFO]   Usando i best params trovati dalla Grid Search
+2026-06-22 16:01:28,560 [INFO] ============================================================
+2026-06-22 16:01:31,281 [INFO]   Fold 1: Accuracy=0.9445, ROC-AUC=0.9886
+2026-06-22 16:01:31,285 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.94      0.95      0.94       406
+         Yes       0.95      0.94      0.94       405
+
+    accuracy                           0.94       811
+   macro avg       0.94      0.94      0.94       811
+weighted avg       0.94      0.94      0.94       811
+
+2026-06-22 16:01:33,958 [INFO]   Fold 2: Accuracy=0.9433, ROC-AUC=0.9834
+2026-06-22 16:01:33,962 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.94      0.95      0.94       406
+         Yes       0.95      0.94      0.94       405
+
+    accuracy                           0.94       811
+   macro avg       0.94      0.94      0.94       811
+weighted avg       0.94      0.94      0.94       811
+
+2026-06-22 16:01:36,665 [INFO]   Fold 3: Accuracy=0.9346, ROC-AUC=0.9846
+2026-06-22 16:01:36,669 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.93      0.94      0.93       406
+         Yes       0.94      0.93      0.93       405
+
+    accuracy                           0.93       811
+   macro avg       0.93      0.93      0.93       811
+weighted avg       0.93      0.93      0.93       811
+
+2026-06-22 16:01:39,381 [INFO]   Fold 4: Accuracy=0.9470, ROC-AUC=0.9896
+2026-06-22 16:01:39,384 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.94      0.96      0.95       406
+         Yes       0.95      0.94      0.95       405
+
+    accuracy                           0.95       811
+   macro avg       0.95      0.95      0.95       811
+weighted avg       0.95      0.95      0.95       811
+
+2026-06-22 16:01:42,091 [INFO]   Fold 5: Accuracy=0.9370, ROC-AUC=0.9879
+2026-06-22 16:01:42,095 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.92      0.96      0.94       406
+         Yes       0.96      0.92      0.94       404
+
+    accuracy                           0.94       810
+   macro avg       0.94      0.94      0.94       810
+weighted avg       0.94      0.94      0.94       810
+
+2026-06-22 16:01:42,095 [INFO] 
+  Media Accuracy : 0.9413 ± 0.0047
+2026-06-22 16:01:42,095 [INFO]   Media ROC-AUC  : 0.9868 ± 0.0024
+2026-06-22 16:01:42,096 [INFO] 
+============================================================
+2026-06-22 16:01:42,096 [INFO] Addestramento modello finale su tutto il training set
+2026-06-22 16:01:42,096 [INFO] ============================================================
+2026-06-22 16:01:42,104 [INFO] 
+  [TEST] Accuracy=0.9274, ROC-AUC=0.9830
+2026-06-22 16:01:42,107 [INFO] 
+              precision    recall  f1-score   support
+
+          No       0.91      0.94      0.93       358
+         Yes       0.94      0.91      0.93       358
+
+    accuracy                           0.93       716
+   macro avg       0.93      0.93      0.93       716
+weighted avg       0.93      0.93      0.93       716
+
+2026-06-22 16:01:42,215 [INFO]   Confusion matrix salvata: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3\plots\confusion_matrix_test.png
+2026-06-22 16:01:42,217 [INFO] 
+Modello salvato: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3\model\classifier.pkl
+2026-06-22 16:01:42,219 [INFO] Metriche salvate: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3\metrics\metrics.json
+2026-06-22 16:01:42,219 [INFO] 
+============================================================
+2026-06-22 16:01:42,219 [INFO] Pipeline completata con successo.
+2026-06-22 16:01:42,219 [INFO] Output salvati in: C:\Users\fanto\Desktop\TesiDiLaurea\classifiers\xgboost\violence\voice_clone_detection\real_vs_qwen3
+2026-06-22 16:01:42,219 [INFO] ============================================================
